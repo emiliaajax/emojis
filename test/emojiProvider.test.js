@@ -58,6 +58,10 @@ describe('Replace emoticons with emojis in text', () => {
   test('Passing an empty string should return an empty string', () => {
     expect(emojiProvider.replaceEmoticonsWithEmojis('')).toBe('')
   })
+
+  test('Passing "MIXDOWN" should not replace the inline emoticon "XD"', () => {
+    expect(emojiProvider.replaceEmoticonsWithEmojis('MIXDOWN')).toBe('MIXDOWN')
+  })
 })
 
 describe('Get emojis that matches text', () => {
